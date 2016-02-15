@@ -22,7 +22,7 @@ import es.omarall.validation.constraints.Iban;
 @ContextConfiguration(classes = { TestConfiguration.class })
 public class IbanTests extends AbstractJUnit4SpringContextTests {
 
-    // private Logger LOG = LoggerFactory.getLogger(E164Tests.class);
+    // private Logger LOG = LoggerFactory.getLogger(IbanTests.class);
 
     @Autowired
     private Validator validator;
