@@ -10,7 +10,7 @@ Based on valnif library from  [Agencia Tributaria Española](http://www.agenciatr
   
 #### Requirements
 
-Hibernate Validator 4.3.1.Final and newer is supported.
+Hibernate Validator 5.1.1.Final and newer is supported.
 
 #### License
 
