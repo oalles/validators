@@ -7,22 +7,21 @@ import com.aeat.valida.Validador;
 
 public class NifValidator implements ConstraintValidator<Nif, String> {
 
-	@Override
-	public void initialize(Nif constraintAnnotation) {
-	}
+    public void initialize(Nif constraintAnnotation) {
+        // TODO Auto-generated method stub
 
-	@Override
-	public boolean isValid(String value, ConstraintValidatorContext context) {
-		if (value == null) {
-			return true;
-		}
-		Validador val = new Validador();
-		int nif1 = val.checkNif(value);
-		val.vNif(value);
-		if (nif1 == Validador.NIF_OK) {
-			return true;
-		}
-		return false;
-	}
+    }
 
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+        if (value == null) {
+            return true;
+        }
+        Validador val = new Validador();
+        int nif1 = val.checkNif(value);
+        val.vNif(value);
+        if (nif1 == Validador.NIF_OK) {
+            return true;
+        }
+        return false;
+    }
 }
