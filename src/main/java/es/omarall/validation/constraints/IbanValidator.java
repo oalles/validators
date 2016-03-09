@@ -8,8 +8,6 @@ import javax.validation.ConstraintValidatorContext;
 public class IbanValidator implements ConstraintValidator<Iban, String> {
 
     public void initialize(Iban constraintAnnotation) {
-        // TODO Auto-generated method stub
-
     }
 
     public boolean isValid(String value, ConstraintValidatorContext context) {
