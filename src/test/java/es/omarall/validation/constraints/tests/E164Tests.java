@@ -43,6 +43,16 @@ public class E164Tests extends AbstractJUnit4SpringContextTests {
     }
 
     @Test
+    public void testNullNumberIsValid() throws Exception {
+
+        PhoneNumberWrapper w = new PhoneNumberWrapper(null);
+
+        Set<ConstraintViolation<PhoneNumberWrapper>> constraintViolations = validator
+                .validate(w);
+        Assert.isTrue(0 == constraintViolations.size());
+    }
+
+    @Test
     public void testE164IsValid() throws Exception {
         PhoneNumberWrapper w = new PhoneNumberWrapper("+34600000000");
         Set<ConstraintViolation<PhoneNumberWrapper>> constraintViolations = validator
@@ -60,9 +70,17 @@ public class E164Tests extends AbstractJUnit4SpringContextTests {
     }
 
     @Test
-    public void testNumberWithPlusSignIsInvalid() throws Exception {
-        PhoneNumberWrapper w = new PhoneNumberWrapper("+34 600 00 00 00");
+    public void testNoPlusSignedNumberBut00IsInvalid() throws Exception {
+        PhoneNumberWrapper w = new PhoneNumberWrapper("0034600000000");
+        Set<ConstraintViolation<PhoneNumberWrapper>> constraintViolations = validator
+                .validate(w);
+        Assert.isTrue(1 == constraintViolations.size());
+    }
 
+    @Test
+    public void testNumberWithPlusSignIsInvalid() throws Exception {
+        // InternationFormat, no E164
+        PhoneNumberWrapper w = new PhoneNumberWrapper("+34 600 00 00 00");
         Set<ConstraintViolation<PhoneNumberWrapper>> constraintViolations = validator
                 .validate(w);
         Assert.isTrue(1 == constraintViolations.size());
