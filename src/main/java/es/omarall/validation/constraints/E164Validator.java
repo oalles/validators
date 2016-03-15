@@ -25,7 +25,7 @@ public class E164Validator implements ConstraintValidator<E164, String> {
             final ConstraintValidatorContext context) {
 
         if (value == null) {
-            return true;
+            return false;
         }
         try {
 
