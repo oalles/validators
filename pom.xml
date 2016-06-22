@@ -16,6 +16,10 @@
 			<id>central</id>
 			<url>http://repo1.maven.org/maven2/</url>
 		</repository>
+		<repository>
+			<id>Otro</id>
+			<url>http://nexus.emergya.es/nexus/content/groups/public/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
